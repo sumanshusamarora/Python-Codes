@@ -1,0 +1,47 @@
+def print_rangoli(size):
+    # your code goes here
+    width=(size*2)+((size*2)-3)
+    rows=(size*2)-1
+    alphas=-1
+    ls_alpha=['na','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    for i in range(int(rows/2)+1):
+        alphas+=2
+        dashes=width-alphas
+        inner_dashes=alphas-1
+        outer_dashes=int((dashes-inner_dashes)/2)
+        print("-"*outer_dashes,end='')
+        for i in range(int(alphas//2)+1):
+            print(ls_alpha[size-i], end='')
+            if i != alphas-1:
+                print("-", end='')
+            nex_loop=size-i
+        for i in range(int(alphas//2)):
+            print(ls_alpha[nex_loop+i+1], end='')
+            if i != int(alphas//2)-1:
+                print("-", end='')
+        print("-"*outer_dashes)
+
+    for i in range(int(rows/2)):
+        alphas-=2
+        dashes=width-alphas
+        inner_dashes=alphas-1
+        outer_dashes=int((dashes-inner_dashes)/2)
+        print("-"*outer_dashes,end='')
+        for i in range(int(alphas//2)+1):
+            print(ls_alpha[size-i], end='')
+            if i != alphas-1:
+                print("-", end='')
+            nex_loop=size-i
+        for i in range(int(alphas//2)):
+            print(ls_alpha[nex_loop+i+1], end='')
+            if i != int(alphas//2)-1:
+                print("-", end='')
+        print("-"*outer_dashes)
+
+       
+
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
