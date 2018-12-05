@@ -1,0 +1,9 @@
+def solve(s):
+    new_str=""
+    for x in range(len(s)):
+        if x==0 or (x>0 and s[x-1] == " "):
+            new_str=new_str+s[x].upper()
+        else:
+            new_str=new_str+s[x]
+ 
+    return new_str
