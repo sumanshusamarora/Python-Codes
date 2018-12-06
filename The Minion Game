@@ -1,0 +1,25 @@
+def minion_game(string):
+    # your code goes here
+    vowels=['A','E','I','O','U']
+    ls1=[]
+    ls2=[]
+    string=string.upper()
+    for i in range(len(string)):
+        if string[i] not in vowels:
+            for j in range(len(string)-i):
+                ls2.append(string[i:i+j+1])
+
+    
+
+    for i in range(len(string)):
+        if string[i] in vowels:
+            for j in range(len(string)-i):
+                ls1.append(string[i:i+j+1])
+    
+        
+    if len(ls1) > len(ls2):
+        print("Kevin", len(ls1))
+    if len(ls1) < len(ls2):
+        print("Stuart", len(ls2))
+    if len(ls1) == len(ls2):
+        print("Draw")
